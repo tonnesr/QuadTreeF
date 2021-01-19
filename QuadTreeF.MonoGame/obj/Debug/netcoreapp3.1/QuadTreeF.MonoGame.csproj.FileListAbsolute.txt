@@ -1,0 +1,9 @@
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\bin\Debug\netcoreapp3.1\QuadTreeF.MonoGame.deps.json
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\bin\Debug\netcoreapp3.1\QuadTreeF.MonoGame.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\bin\Debug\netcoreapp3.1\QuadTreeF.MonoGame.pdb
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.csprojAssemblyReference.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.AssemblyInfoInputs.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.AssemblyInfo.cs
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.csproj.CoreCompileInputs.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF.MonoGame\obj\Debug\netcoreapp3.1\QuadTreeF.MonoGame.pdb

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "lurQnDxbedezX4J5ZA3lfLT9K8zjVC66zT12sxrf9+OmIZV/pBckTOvouyNpcuX1iZVhfkgqWMMOyZWwMXuPog==",
+  "success": true,
+  "projectFilePath": "D:\\code\\monogame_projects\\rpg_project\\QuadTreeF.MonoGame\\QuadTreeF.MonoGame.csproj",
+  "expectedPackageFiles": [
+    "c:\\NuGetPackages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "c:\\NuGetPackages\\tonnes.quadtreef\\1.0.1\\tonnes.quadtreef.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

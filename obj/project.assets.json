@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\code\\monogame_projects\\rpg_project\\tonnes\\quadtree\\QuadTreeF\\QuadTreeF.csproj",
-      "projectName": "QuadTreeF",
-      "projectPath": "D:\\code\\monogame_projects\\rpg_project\\tonnes\\quadtree\\QuadTreeF\\QuadTreeF.csproj",
+      "projectUniqueName": "D:\\code\\monogame_projects\\rpg_project\\QuadTreeF\\QuadTreeF.csproj",
+      "projectName": "Tonnes.QuadTreeF",
+      "projectPath": "D:\\code\\monogame_projects\\rpg_project\\QuadTreeF\\QuadTreeF.csproj",
       "packagesPath": "c:\\NuGetPackages",
-      "outputPath": "D:\\code\\monogame_projects\\rpg_project\\tonnes\\quadtree\\QuadTreeF\\obj\\",
+      "outputPath": "D:\\code\\monogame_projects\\rpg_project\\QuadTreeF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

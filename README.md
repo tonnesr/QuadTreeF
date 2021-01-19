@@ -1,4 +1,5 @@
-[![License](https://flat.badgen.net/github/license/micromatch/micromatch)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/github/license/tonnesr/QuadTreeF?color=blue)](https://opensource.org/licenses/MIT)
+[![NuGet](https://img.shields.io/nuget/v/Tonnes.QuadTreeF)](https://www.nuget.org/packages/Tonnes.QuadTreeF/)
 
 # QuadTreeF
 A generic QuadTree implementation where all nodes are stored in the leafs of the tree, and rectangles plus points are stored as floats.

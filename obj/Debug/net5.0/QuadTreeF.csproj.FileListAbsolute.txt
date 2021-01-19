@@ -1,0 +1,12 @@
+D:\code\monogame_projects\rpg_project\QuadTreeF\bin\Debug\net5.0\QuadTreeF.deps.json
+D:\code\monogame_projects\rpg_project\QuadTreeF\bin\Debug\net5.0\QuadTreeF.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF\bin\Debug\net5.0\ref\QuadTreeF.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF\bin\Debug\net5.0\QuadTreeF.pdb
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.csprojAssemblyReference.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.GeneratedMSBuildEditorConfig.editorconfig
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.AssemblyInfoInputs.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.AssemblyInfo.cs
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.csproj.CoreCompileInputs.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\ref\QuadTreeF.dll
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net5.0\QuadTreeF.pdb

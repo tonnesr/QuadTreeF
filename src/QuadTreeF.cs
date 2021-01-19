@@ -278,12 +278,12 @@ namespace Tonnes.QuadTreeF
       ((ICollection<QuadNodeF<T>>)this).CopyTo(array, index);
     }
 
-    /*/// <summary>Similar float point values might be overwritten by other values. Col 0.1 and 0.5 on row 0 will both be assigned to the same index. The last value will be the only one stored in the array.</summary>
+    /// <summary>Similar float point values might be overwritten by other values. Col 0.1 and 0.5 on row 0 will both be assigned to the same index. The last value will be the only one stored in the array.</summary>
     public T[][] ToJaggedArray() { // MAYBE default value parameter
       RectangleF bounds = this.Bounds;
       T[][] array = new T[(int)MathF.Ceiling(bounds.Height)][];
       int width = (int)MathF.Ceiling(bounds.Width);
-      foreach(QuadNode<T> node in this.AllNodes) {
+      foreach(QuadNodeF<T> node in this.AllNodes) {
         PointF vector = node.Point;
         int y = (int)vector.Y;
         T[] row = array[y];
@@ -297,12 +297,12 @@ namespace Tonnes.QuadTreeF
     public T[,] To2dArray() { // MAYBE default value parameter
       RectangleF bounds = this.Bounds;
       T[,] array = new T[(int)MathF.Ceiling(bounds.Height), (int)MathF.Ceiling(bounds.Width)];
-      foreach(QuadNode<T> node in this.AllNodes) {
+      foreach(QuadNodeF<T> node in this.AllNodes) {
         PointF vector = node.Point;
         array[(int)vector.Y, (int)vector.X] = node.Value;
       }
       return array;
-    }*/
+    }
 
     public bool Equals(QuadTreeF<T> tree) {
       EqualityComparer<QuadTreeF<T>> treeComparer = EqualityComparer<QuadTreeF<T>>.Default;

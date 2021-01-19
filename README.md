@@ -1,5 +1,5 @@
 # QuadTreeF
-A QuadTree implementation where all nodes are stored in the leafs of the tree, and rectangles plus points are stored as floats.
+A generic QuadTree implementation where all nodes are stored in the leafs of the tree, and rectangles plus points are stored as floats.
 
 ## Usage example:
 

@@ -49,6 +49,6 @@ namespace Tonnes.QuadTreeF
     public override bool Equals(object obj) => this.Equals((RectangleF)obj);
     public override int GetHashCode() => HashCode.Combine(this.X, this.Y, this.Width, this.Height);
 
-    public override string ToString() => String.Format("x: {0}, y: {1}, width:; {2}, height: {3}", this.X, this.Y, this.Width, this.Height);
+    public override string ToString() => String.Format("x: {0}, y: {1}, width: {2}, height: {3}", this.X, this.Y, this.Width, this.Height);
   }
 }

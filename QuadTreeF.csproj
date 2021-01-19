@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
     <PackageId>Tonnes.QuadTreeF</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Tønnes Røren</Authors>
     <Company>Tønnes Røren</Company>
     <PackageTags>quadtree;dotnet;collection</PackageTags>

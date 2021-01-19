@@ -6,3 +6,4 @@ D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\netcoreapp3.1\QuadTree
 D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\netcoreapp3.1\QuadTreeF.csproj.CoreCompileInputs.cache
 D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\netcoreapp3.1\QuadTreeF.dll
 D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\netcoreapp3.1\QuadTreeF.pdb
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\netcoreapp3.1\QuadTreeF.csprojAssemblyReference.cache

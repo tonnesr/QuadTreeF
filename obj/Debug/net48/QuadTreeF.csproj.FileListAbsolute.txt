@@ -1,0 +1,3 @@
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net48\QuadTreeF.AssemblyInfoInputs.cache
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net48\QuadTreeF.AssemblyInfo.cs
+D:\code\monogame_projects\rpg_project\QuadTreeF\obj\Debug\net48\QuadTreeF.csproj.CoreCompileInputs.cache

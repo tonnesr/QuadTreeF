@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.1": {},
     ".NETStandard,Version=v2.1/": {
-      "QuadTreeF/1.0.5": {
+      "QuadTreeF/1.0.6": {
         "runtime": {
           "QuadTreeF.dll": {}
         }
@@ -15,7 +15,7 @@
     }
   },
   "libraries": {
-    "QuadTreeF/1.0.5": {
+    "QuadTreeF/1.0.6": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

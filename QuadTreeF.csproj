@@ -7,5 +7,6 @@
     <Company>Tønnes Røren</Company>
     <PackageTags>quadtree;dotnet;collection</PackageTags>
     <RepositoryUrl>https://github.com/tonnesr/QuadTreeF.git</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 </Project>

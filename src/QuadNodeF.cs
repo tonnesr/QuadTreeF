@@ -14,6 +14,7 @@ namespace Tonnes.QuadTreeF
     public QuadNodeF(float x, float y, T value) : this(new PointF(x, y), value) {}
     public QuadNodeF(PointF point, T value) => (this.Point, this.Value) = (point, value);
 
+    /// <summary>Value based equality comparison of two nodes</summary>
     public bool Equals(QuadNodeF<T> node) => EqualityComparer<PointF>.Default.Equals(this.Point, node.Point) && EqualityComparer<T>.Default.Equals(this.Value, node.Value);
     public override bool Equals(object obj) => this.Equals((QuadNodeF<T>)obj);
     public override int GetHashCode() => HashCode.Combine(this.Point, this.Value);

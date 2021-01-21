@@ -12,13 +12,14 @@ namespace Tonnes.QuadTreeF
     private List<QuadNodeF<T>> _nodes;
 
     private readonly int _maxNodes;
-    /// <summary>Max number of nodes in the leaf/tree</summary>
+    /// <summary>Max number of nodes in the leaf</summary>
     public int MaxNodes => this._maxNodes;
 
     private readonly RectangleF _bounds;
     /// <summary>Bounds of the leaf/tree</summary>
     public RectangleF Bounds => this._bounds;
 
+    /// <summary>This branch is a leaf</summary>
     private bool _isLeaf => this._quadTopLeft == null;
 
     public bool IsReadOnly => false;
@@ -105,9 +106,15 @@ namespace Tonnes.QuadTreeF
     public void Add(PointF point, T value) => this.Add(new QuadNodeF<T>(point, value));
     /// <summary>Add a node to the tree</summary>
     public void Add(QuadNodeF<T> node) {
-      if(!this._bounds.Contains(node.Point)) return;
+      PointF point = node.Point;
+      if(!this._bounds.Contains(point)) return;
       if(this._isLeaf) {
-        this._nodes.Add(node);
+        int existingNodePointIndex = this._indexOfPointInLeaf(point);
+        if(existingNodePointIndex >= 0) {
+          this._nodes[existingNodePointIndex] = node;
+        } else {
+          this._nodes.Add(node);
+        }
         if(this._nodes.Count >= this._maxNodes) this._createQuads();
         return;
       }
@@ -123,7 +130,9 @@ namespace Tonnes.QuadTreeF
       foreach(QuadNodeF<T> node in nodes) this.Add(node);
     }
 
+    /// <summary>Check if there are a node at point</summary>
     public bool Contains(float x, float y) => this.Contains(new PointF(x, y));
+    /// <summary>Check if there are a node at point</summary>
     public bool Contains(PointF point) {
       if(!this._bounds.Contains(point)) return false;
       if(this._isLeaf) {
@@ -139,6 +148,7 @@ namespace Tonnes.QuadTreeF
         this._quadBottomRight.Contains(point)
       );
     }
+    /// <summary>Check the tree contains a node. Testing values not reference.</summary>
     public bool Contains(QuadNodeF<T> node) {
       if(!this._bounds.Contains(node.Point)) return false;
       if(this._isLeaf) {
@@ -155,13 +165,17 @@ namespace Tonnes.QuadTreeF
       );
     }
 
+    /// <summary>Try to get a node by searching for it by a point</summary>
     public QuadNodeF<T> Search(float x, float y) => this.Search(new PointF(x, y));
+    /// <summary>Try to get a node by searching for it by a tuple point</summary>
     public QuadNodeF<T> Search((float x, float y) point) => this.Search((PointF)point);
+    /// <summary>TryGet by searching for point </summary>
     public bool Search(float x, float y, out QuadNodeF<T> node) {
       bool exists = this.Search(new PointF(x, y), out QuadNodeF<T> outNode);
       node = outNode;
       return exists;
     }
+    /// <summary>Try to get a node by searching for it by a point</summary>
     public QuadNodeF<T> Search(PointF point) {
       if(!this._bounds.Contains(point)) return default(QuadNodeF<T>);
       if(this._isLeaf) {
@@ -180,6 +194,7 @@ namespace Tonnes.QuadTreeF
       if(brNode != default(QuadNodeF<T>)) return brNode;
       return default(QuadNodeF<T>);
     }
+    /// <summary>TryGet a node by searching for it by a point</summary>
     public bool Search(PointF point, out QuadNodeF<T> node) {
       node = default(QuadNodeF<T>);
       if(!this._bounds.Contains(point)) return false;
@@ -210,6 +225,8 @@ namespace Tonnes.QuadTreeF
       }
       return false;
     }
+    /// <summary>Search for all nodes inside of a rectangle.</summary>
+    /// <returns>A list of all nodes inside of the rectangle</returns>
     public List<QuadNodeF<T>> Search(RectangleF rect) {
       List<QuadNodeF<T>> nodes = new List<QuadNodeF<T>>();
       if(!this._bounds.Intersects(rect)) return nodes;
@@ -226,7 +243,9 @@ namespace Tonnes.QuadTreeF
       return nodes;
     }
 
+    /// <summary>Remove a node from the tree using a point</summary>
     public bool Remove(float x, float y) => this.Remove(new PointF(x, y));
+    /// <summary>Remove a node from the tree using a point</summary>
     public bool Remove(PointF point) {
       if(!this._bounds.Contains(point)) return false;
       if(this._isLeaf) {
@@ -242,6 +261,7 @@ namespace Tonnes.QuadTreeF
         this._quadBottomRight.Remove(point)        
       );
     }
+    /// <summary>Remove a node form the tree. Comparing using values not reference.</summary>
     public bool Remove(QuadNodeF<T> node) {
       if(!this._bounds.Contains(node.Point)) return false;
       if(this._isLeaf) return this._nodes.Remove(node);
@@ -253,6 +273,7 @@ namespace Tonnes.QuadTreeF
       );
     }
 
+    /// <summary>Divide this branch into four new ones</summary>
     private void _createQuads() {
       float halfWidth = this._bounds.Width / 2;
       float halfHeight = this._bounds.Height / 2;
@@ -264,6 +285,16 @@ namespace Tonnes.QuadTreeF
       this._nodes.Clear();
     }
 
+    /// <summary>Get index of a node using the node's point in this leaf.</summary>
+    private int _indexOfPointInLeaf(PointF point) {
+      for(int i = 0; i < this._nodes.Count; ++i) {
+        QuadNodeF<T> node = this._nodes[i];
+        if(node != null && node.Point.Equals(point)) return i;
+      }
+      return -1;
+    }
+
+    /// <summary>Clear all nodes/leafs/branches from the tree. The root (original) tree is reverted to its original state.</summary>
     public void Clear() {
       this._nodes.Clear();
       this._nodes = null;
@@ -273,13 +304,15 @@ namespace Tonnes.QuadTreeF
       this._quadBottomRight = null;
     }
 
+    /// <see href="https://docs.microsoft.com/en-us/dotnet/api/system.array.copyto?view=net-5.0"/>
     public void CopyTo(QuadNodeF<T>[] array, int index) {
       if(array == default(QuadNodeF<T>[])) throw new ArgumentNullException(nameof(array));
       ((ICollection<QuadNodeF<T>>)this).CopyTo(array, index);
     }
 
     /// <summary>Similar float point values might be overwritten by other values. Col 0.1 and 0.5 on row 0 will both be assigned to the same index. The last value will be the only one stored in the array.</summary>
-    public T[][] ToJaggedArray() { // MAYBE default value parameter
+    /// <remarks>Should probably not be used in critical systems.</remarks>
+    public virtual T[][] ToJaggedArray() { // MAYBE default value parameter
       RectangleF bounds = this.Bounds;
       T[][] array = new T[(int)MathF.Ceiling(bounds.Height)][];
       int width = (int)MathF.Ceiling(bounds.Width);
@@ -294,7 +327,8 @@ namespace Tonnes.QuadTreeF
       return array;
     }
     /// <summary>Similar float point values might be overwritten by other values. Col 0.1 and 0.5 on row 0 will both be assigned to the same index. The last value will be the only one stored in the array.</summary>
-    public T[,] To2dArray() { // MAYBE default value parameter
+    /// <remarks>Should probably not be used in critical systems.</remarks>
+    public virtual T[,] To2dArray() { // MAYBE default value parameter
       RectangleF bounds = this.Bounds;
       T[,] array = new T[(int)MathF.Ceiling(bounds.Height), (int)MathF.Ceiling(bounds.Width)];
       foreach(QuadNodeF<T> node in this.AllNodes) {
@@ -304,6 +338,7 @@ namespace Tonnes.QuadTreeF
       return array;
     }
 
+    /// <summary>Check value passed equality of two quadtrees of same generic type</summary>
     public bool Equals(QuadTreeF<T> tree) {
       EqualityComparer<QuadTreeF<T>> treeComparer = EqualityComparer<QuadTreeF<T>>.Default;
       return (
